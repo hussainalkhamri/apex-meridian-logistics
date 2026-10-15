@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'preview' => 'Preview map', 'title' => 'Shipment route', 'map' => 'Map',
+    'details' => 'Carrier and documents', 'close' => 'Close', 'fit' => 'Fit entire route',
+    'locate' => 'Estimated shipment position', 'estimated' => 'Time-based estimate',
+    'estimate_notice' => 'Calculated from ETD and ETA assuming steady progress. Stops and route changes may affect the actual position. This is not a live GPS feed.',
+    'time_progress' => 'Estimated time progress', 'origin' => 'Departure', 'destination' => 'Arrival',
+    'transport' => 'Transport mode', 'duration' => 'Journey duration', 'remaining' => 'Until scheduled arrival',
+    'distance' => 'Approximate route length', 'days' => 'days', 'km' => 'km', 'refresh' => 'Refresh estimate',
+    'geodata' => 'Location sources', 'loading' => 'Loading route...',
+    'unavailable' => 'Valid departure and arrival dates are required to estimate a position.',
+    'scheduled' => 'Scheduled departure has not yet been reached', 'in_transit' => 'Within the scheduled journey period',
+    'eta_passed' => 'Scheduled arrival reached; operations must confirm actual arrival.',
+    'missing_coordinates' => 'Reliable coordinates are unavailable for this route. An estimated position cannot be shown.',
+    'route_unavailable' => 'A suitable route could not be calculated. Only departure and arrival points are shown.',
+    'multimodal' => 'The main transport mode is unspecified. Only departure and arrival points are shown.',
+    'fetch_error' => 'Unable to load map data. Please try again.',
+    'tiles_error' => 'Unable to load the map background. Check your internet connection.',
+    'simple_map' => 'Simplified geographic map',
+    'route_notes' => ['SEA' => 'Approximate maritime network route with estimated port connections, not a confirmed sailing plan or berth location.', 'AIR' => 'Approximate great-circle route between journey endpoints; airline routing may differ.', 'LAND' => 'Suggested city-to-city road route; border crossings and operating restrictions may affect the journey.'],
+    'calculated' => 'Calculated at', 'carrier_details' => 'Recorded carrier details', 'vehicle' => 'Vessel / vehicle',
+    'carrier_updated' => 'Booking confirmed at', 'documents' => 'Attached documents', 'no_documents' => 'No attachments for this request.',
+    'documents_private' => 'Documents are available to the shipment owner and authorized staff after signing in.',
+    'modes' => ['SEA' => 'Sea', 'AIR' => 'Air', 'LAND' => 'Road', 'MULTIMODAL' => 'Multimodal / unspecified'],
+];

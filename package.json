@@ -1,0 +1,24 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build --configLoader native",
+        "dev": "vite"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.0.0",
+        "concurrently": "^9.0.1",
+        "laravel-vite-plugin": "^3.1",
+        "lucide": "^1.22.0",
+        "tailwindcss": "^4.0.0",
+        "vite": "^8.0.0"
+    },
+    "dependencies": {
+        "@turf/along": "^7.4.0",
+        "@turf/great-circle": "^7.4.0",
+        "@turf/length": "^7.4.0",
+        "leaflet": "^1.9.4",
+        "searoute-js": "^0.1.0"
+    }
+}

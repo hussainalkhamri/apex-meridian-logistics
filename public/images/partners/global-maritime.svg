@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50" fill="none">
+  <rect x="1" y="1" width="158" height="48" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <circle cx="26" cy="25" r="14" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <path d="M19 25 L24 30 L33 20" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="48" y="24" font-family="system-ui, sans-serif" font-size="10.5" font-weight="700" fill="#0f172a">GLOBAL MARITIME</text>
+  <text x="48" y="35" font-family="system-ui, sans-serif" font-size="8" font-weight="600" fill="#16a34a" letter-spacing="1">ALLIANCE MEMBER</text>
+</svg>

@@ -1,0 +1,16 @@
+# Tracking Geography
+
+These local lookup files locate shipment endpoints without transmitting customer addresses to a geocoding service. They are reference coordinates, not live vehicle positions. Missing or ambiguous locations are not guessed.
+
+A known port without UN/LOCODE coordinates may use a uniquely matched GeoNames city in that port's country (for example Aden). The response identifies this as city-level precision, not a berth location. Maritime routes include approximate connections to the routing network, limited to 200 km at each end; distant inland locations are not treated as seaports. Road-network connections are limited to 25 km.
+
+- `ports.json`: port localities with coordinates in the UNECE UN/LOCODE codelist, via the [DataHub maintained mirror](https://github.com/datasets/un-locode/blob/main/data/code-list.csv). [Original source](https://unece.org/trade/cefact/unlocode-code-list-country-and-territory). Coordinates identify the port locality, not a terminal or berth.
+- `airports.json`: IATA airports from [OurAirports](https://ourairports.com/data/), public domain. Source CSV: https://raw.githubusercontent.com/davidmegginson/ourairports-data/main/airports.csv.
+- `cities/*.json` and `city-countries.json`: city coordinates and name aliases from [GeoNames cities15000](https://download.geonames.org/export/dump/), licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Data are reduced to names, country codes, and coordinates, partitioned by country to limit request memory usage; city-level locations are approximate.
+- `world.json`: simplified 1:110m country outlines and label points from [Natural Earth](https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_admin_0_countries.geojson), [public domain](https://www.naturalearthdata.com/about/terms-of-use/), downloaded 2026-09-06. This locally served base layer remains visible when detailed online tiles are unavailable. It is not street-level mapping. Rebuild with `node scripts/build-tracking-basemap.mjs` from `tmp/tracking-world.geojson`.
+
+Downloaded on 2026-09-05. Regenerate using `scripts/build-tracking-catalog.php` after downloading the source files into the corresponding `tmp` paths named in that script. None of these data are imported into customer or booking tables.
+
+The map uses Leaflet, OpenStreetMap tiles (attribution retained), Turf for air geometry/distance interpolation, searoute-js for an illustrative maritime route, and configurable OSRM for road geometry. Map libraries and the maritime worker load only when requested. Background tiles require internet. `TRACKING_TILE_URL`, `TRACKING_TILE_ATTRIBUTION`, and `TRACKING_OSRM_URL` can point to a production mapping provider or self-hosted services. Public community tile/routing services have no availability guarantee; see the [OSM tile policy](https://operations.osmfoundation.org/policies/tiles/).
+
+The position estimate is clamped elapsed time / scheduled duration, using the booking's latest carrier ETD/ETA (falling back to tracking dates), in the application timezone. Dates without times mean midnight in that timezone. Reaching ETA does not confirm delivery. Invalid/missing dates produce no position marker; missing route geometry never produces a fabricated road or sea path. The stored operational progress remains unchanged.
