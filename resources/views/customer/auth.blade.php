@@ -221,7 +221,7 @@
                                     <input type="checkbox" name="remember" class="h-4 w-4 rounded border-border accent-accent">
                                     {{ __('messages.remember_me') }}
                                 </label>
-                                <button class="inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-gradient-accent px-5 text-sm font-black text-accent-foreground shadow-glow hover:opacity-95">
+                                <button type="submit" class="inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-gradient-accent px-5 text-sm font-black text-accent-foreground shadow-glow hover:opacity-95">
                                     <i data-lucide="log-in" class="h-4 w-4"></i>
                                     {{ __('messages.customer_portal_login_btn') }}
                                 </button>
@@ -263,7 +263,7 @@
                                     <input type="checkbox" name="remember" class="h-4 w-4 rounded border-border accent-accent">
                                     {{ __('messages.remember_me') }}
                                 </label>
-                                <button class="inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-gradient-accent px-5 text-sm font-black text-accent-foreground shadow-glow hover:opacity-95">
+                                <button type="submit" class="inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-gradient-accent px-5 text-sm font-black text-accent-foreground shadow-glow hover:opacity-95">
                                     <i data-lucide="id-card" class="h-4 w-4"></i>
                                     {{ __('messages.staff_panel_login_btn') }}
                                 </button>

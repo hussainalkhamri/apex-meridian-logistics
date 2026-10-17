@@ -28,3 +28,6 @@ database/*.sqlite-journal
 database/*.sqlite-shm
 database/*.sqlite-wal
 /tmp
+ 
+/test-results/
+/playwright-report/

@@ -2,12 +2,12 @@
 
 return [
     'name' => [
-        'ar' => 'نظام إدارة الشحن والخدمات اللوجستية',
-        'en' => 'Freight & Logistics Management System',
+        'ar' => 'الشحن والخدمات اللوجستية',
+        'en' => 'Shipping and Logistics',
     ],
     'short_name' => [
-        'ar' => 'إدارة الشحن واللوجستيات',
-        'en' => 'Freight & Logistics Portal',
+        'ar' => 'الشحن واللوجستيات',
+        'en' => 'Shipping & Logistics',
     ],
     'address' => [
         'ar' => 'مركز التجارة البحرية، حي المرفأ، جناح 400، البوابة الدولية',
@@ -28,14 +28,10 @@ return [
         'operations@example.com',
         'support@example.com',
     ],
-    'website' => 'https://demo.logistics-freight.test',
+    'website' => null,
     'tax_number' => env('COMPANY_TAX_NUMBER', 'US-88291047-X'),
     'logo' => 'images/brand/system-logo.svg',
     'letterhead_logo' => 'images/brand/system-letterhead.svg',
     'icon' => 'images/brand/system-icon.svg',
-    'partners' => [
-        ['name' => 'Global Maritime Alliance', 'logo' => 'images/partners/global-maritime.svg'],
-        ['name' => 'International Freight Network', 'logo' => 'images/partners/freight-network.svg'],
-        ['name' => 'Pacific Ocean Carrier Council', 'logo' => 'images/partners/carrier-council.svg'],
-    ],
+    'partners' => [],
 ];

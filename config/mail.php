@@ -112,7 +112,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'contact@example.com'),
-        'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Freight & Logistics Management System')),
+        'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Shipping and Logistics')),
     ],
 
 ];

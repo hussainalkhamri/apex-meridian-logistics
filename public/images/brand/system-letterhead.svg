@@ -13,6 +13,6 @@
     <rect x="35" y="12" width="2" height="12" fill="#94a3b8"/>
     <circle cx="36" cy="11" r="1.5" fill="#38bdf8"/>
   </g>
-  <text x="70" y="32" font-family="'Cairo', system-ui, sans-serif" font-size="14.5" font-weight="800" fill="#0f172a">نظام إدارة الشحن والخدمات اللوجستية</text>
-  <text x="70" y="52" font-family="system-ui, sans-serif" font-size="8.5" font-weight="700" fill="#0284c7" letter-spacing="1.8">FREIGHT &amp; LOGISTICS MANAGEMENT SYSTEM</text>
+  <text x="70" y="32" font-family="'Cairo', system-ui, sans-serif" font-size="15" font-weight="800" fill="#0f172a">الشحن والخدمات اللوجستية</text>
+  <text x="70" y="52" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#0284c7" letter-spacing="2">SHIPPING &amp; LOGISTICS</text>
 </svg>
