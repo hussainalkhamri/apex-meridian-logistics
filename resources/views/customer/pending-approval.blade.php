@@ -35,10 +35,8 @@
         <section class="container mx-auto flex min-h-screen max-w-6xl flex-col px-4 py-6">
             <header class="flex flex-wrap items-center justify-between gap-4">
                 <a href="{{ route('home') }}" class="flex min-w-0 items-center gap-3">
-                    <img src="{{ asset(config('company.icon')) }}?v=3" alt="{{ __('messages.company_logo_alt') }}" class="h-11 w-11 rounded-xl border border-border bg-white object-contain p-0.5 shadow-sm">
                     <div class="min-w-0">
-                        <div class="truncate text-sm font-black sm:text-base">{{ __('messages.site_name') }}</div>
-                        <div class="text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground">Customer Portal</div>
+                        <div class="truncate text-base font-black">{{ __('messages.site_name') }}</div>
                     </div>
                 </a>
 

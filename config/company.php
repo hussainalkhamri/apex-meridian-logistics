@@ -2,12 +2,12 @@
 
 return [
     'name' => [
-        'ar' => 'الشحن والخدمات اللوجستية',
-        'en' => 'Shipping and Logistics',
+        'ar' => 'نظام إدارة الشحن والخدمات اللوجستية',
+        'en' => 'Shipping and Logistics Management System',
     ],
     'short_name' => [
-        'ar' => 'الشحن واللوجستيات',
-        'en' => 'Shipping & Logistics',
+        'ar' => 'نظام إدارة الشحن والخدمات اللوجستية',
+        'en' => 'Shipping & Logistics Management System',
     ],
     'address' => [
         'ar' => 'مركز التجارة البحرية، حي المرفأ، جناح 400، البوابة الدولية',
@@ -30,8 +30,8 @@ return [
     ],
     'website' => null,
     'tax_number' => env('COMPANY_TAX_NUMBER', 'US-88291047-X'),
-    'logo' => 'images/brand/system-logo.svg',
-    'letterhead_logo' => 'images/brand/system-letterhead.svg',
-    'icon' => 'images/brand/system-icon.svg',
+    'logo' => null,
+    'letterhead_logo' => null,
+    'icon' => null,
     'partners' => [],
 ];

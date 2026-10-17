@@ -213,10 +213,8 @@
                 <!-- Sidebar Header -->
                 <div class="flex h-16 items-center justify-between px-6 border-b border-border/60 bg-card/90">
                     <a href="{{ route('home') }}" class="flex items-center gap-2">
-                        <img src="{{ asset(config('company.icon')) }}?v=3" alt="{{ __('messages.company_logo_alt') }}" class="company-site-logo h-8 w-8 rounded-lg border border-border bg-white object-contain p-0.5 shadow-sm">
                         <div class="leading-tight">
                             <div class="text-sm font-extrabold tracking-tight text-foreground">{{ __('messages.site_name') }}</div>
-                            <div class="text-[9px] uppercase tracking-[0.2em] text-muted-foreground">Shipping & Logistics</div>
                         </div>
                     </a>
                     <button onclick="toggleSidebar()" class="lg:hidden h-8 w-8 rounded-lg hover:bg-secondary/40 flex items-center justify-center">
@@ -535,10 +533,8 @@
         <header class="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-xl">
             <div class="container mx-auto flex h-16 min-w-0 items-center justify-between gap-3 px-4">
                 <a href="{{ route('home') }}" class="flex min-w-0 items-center gap-2">
-                    <img src="{{ asset(config('company.icon')) }}?v=3" alt="{{ __('messages.company_logo_alt') }}" class="company-site-logo h-9 w-9 rounded-lg border border-border bg-white object-contain p-0.5 shadow-sm">
                     <div class="min-w-0 leading-tight">
                         <div class="truncate text-base font-extrabold tracking-tight text-foreground">{{ __('messages.site_name') }}</div>
-                        <div class="truncate text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Shipping & Logistics</div>
                     </div>
                 </a>
                 
@@ -696,7 +692,6 @@
         <footer class="border-t border-border/80 bg-card/60 py-6 text-xs text-muted-foreground backdrop-blur-sm">
             <div class="container mx-auto flex flex-col items-center justify-between gap-3 px-4 sm:flex-row">
                 <div class="flex items-center gap-2 font-bold text-foreground">
-                    <img src="{{ asset(config('company.icon')) }}?v=3" alt="Logo" class="h-6 w-6 rounded-md object-contain">
                     <span>{{ config('company.name.' . app()->getLocale()) }}</span>
                 </div>
                 <div>

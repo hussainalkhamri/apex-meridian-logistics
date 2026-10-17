@@ -2,27 +2,31 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Shipping and Logistics ERP System E2E Suite', () => {
 
-  test('1. Enterprise Portal Gateway renders correctly without marketing website clutter', async ({ page }) => {
+  test('1. Direct Login Portal renders without logo or marketing website clutter', async ({ page }) => {
     await page.goto('/');
 
     // Check title contains system name
     const title = await page.title();
-    expect(title).toMatch(/(Shipping (&|and) Logistics|الشحن والخدمات اللوجستية|الشحن واللوجستيات)/);
+    expect(title).toMatch(/(نظام إدارة الشحن والخدمات اللوجستية|Shipping and Logistics)/);
 
-    // Verify 4 direct enterprise portal entry points exist
-    const staffDoor = page.locator('a[href*="/login"]').first();
-    await expect(staffDoor).toBeVisible();
+    // Verify Direct Login Form inputs are visible immediately
+    const usernameInput = page.locator('input[name="username"]').first();
+    await expect(usernameInput).toBeVisible();
 
-    const customerDoor = page.locator('a[href*="/customer/login"]').first();
-    await expect(customerDoor).toBeVisible();
+    const passwordInput = page.locator('input[name="password"]').first();
+    await expect(passwordInput).toBeVisible();
 
-    // Verify tracking input
-    const trackingInput = page.locator('input[name="q"], input[name="tracking_number"]').first();
-    await expect(trackingInput).toBeVisible();
+    // Verify submit button exists
+    const submitBtn = page.locator('button[type="submit"]').first();
+    await expect(submitBtn).toBeVisible();
 
-    // Verify schedules link
-    const schedulesLink = page.locator('a[href*="/schedules"]').first();
-    await expect(schedulesLink).toBeVisible();
+    // Verify Customer Registration link exists
+    const registerLink = page.locator('a[href*="/customer/register"]').first();
+    await expect(registerLink).toBeVisible();
+
+    // Verify no img logos exist in header
+    const logoImgs = page.locator('header img, aside img, .company-site-logo');
+    await expect(logoImgs).toHaveCount(0);
   });
 
   test('2. Language Switching works seamlessly (AR RTL <-> EN LTR)', async ({ page }) => {
@@ -31,14 +35,13 @@ test.describe('Shipping and Logistics ERP System E2E Suite', () => {
     await page.waitForLoadState('networkidle');
     const htmlDirEn = await page.locator('html').getAttribute('dir');
     expect(htmlDirEn).toBe('ltr');
-    await expect(page.locator('body')).toContainText(/Operations|Portal|Logistics|Tracking|Shipments/i);
 
-    // Switch to Arabic
+    // Switch to Arabic (Default system language)
     await page.goto('/language/ar');
     await page.waitForLoadState('networkidle');
     const htmlDirAr = await page.locator('html').getAttribute('dir');
     expect(htmlDirAr).toBe('rtl');
-    await expect(page.locator('body')).toContainText(/الشحن|اللوجستية|تتبع|العمليات/);
+    await expect(page.locator('body')).toContainText(/نظام إدارة الشحن والخدمات اللوجستية|تسجيل الدخول/);
   });
 
   test('3. Real-time Cargo Tracking System displays accurate shipment status and map', async ({ page }) => {

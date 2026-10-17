@@ -135,10 +135,8 @@
         <aside id="customer-sidebar" aria-label="{{ __('portal.navigation') }}" class="portal-sidebar flex h-screen max-w-[calc(100vw-2rem)] shrink-0 flex-col bg-card shadow-sm lg:sticky lg:top-0 z-50">
             <div class="flex h-16 items-center justify-between border-b border-border/60 px-5">
                 <a href="{{ route('customer.dashboard') }}" class="flex min-w-0 items-center gap-2">
-                    <img src="{{ asset(config('company.icon')) }}?v=3" alt="{{ __('messages.company_logo_alt') }}" class="h-9 w-9 rounded-lg border border-border bg-white object-contain p-0.5 shadow-sm">
                     <div class="min-w-0 leading-tight">
-                        <div class="truncate text-sm font-extrabold text-foreground">{{ __('messages.customer_portal') }}</div>
-                        <div class="truncate text-[9px] uppercase tracking-[0.18em] text-muted-foreground">Customer Operations</div>
+                        <div class="truncate text-base font-extrabold text-foreground">{{ __('messages.site_name') }}</div>
                     </div>
                 </a>
                 <button type="button" onclick="toggleCustomerSidebar()" class="grid h-8 w-8 place-items-center rounded-lg hover:bg-secondary/50 lg:hidden" aria-label="{{ __('messages.close_menu') }}">
