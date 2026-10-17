@@ -1,6 +1,6 @@
 # End-to-End User Journeys
 
-**System:** Apex Meridian Logistics  
+**System:** Freight & Logistics Management System (نظام إدارة الشحن والخدمات اللوجستية)  
 **Scope:** Public Discovery, Customer Self-Service, and Booking Lifecycle  
 **Data Context:** 100% Synthetic Demo Dataset  
 
@@ -13,7 +13,7 @@ To validate and demonstrate the application's capabilities, two primary personas
 | Persona | Role | Primary Goals | Entry Route |
 | :--- | :--- | :--- | :--- |
 | **Sarah Chen** | Logistics Director, Global Trade Corp | Search sailing schedules, request spot quotes, track active containers, approve commercial invoices. | `/` &rarr; `/customer/login` |
-| **Tariq Al-Mansoor** | Commercial Freight Specialist, Apex Meridian | Review quote requests, apply carrier markups, manage vessel schedules, issue bills of lading. | `/admin/login` |
+| **Tariq Al-Mansoor** | Commercial Freight Specialist, Operations Team | Review quote requests, apply carrier markups, manage vessel schedules, issue bills of lading. | `/admin/login` |
 
 ---
 

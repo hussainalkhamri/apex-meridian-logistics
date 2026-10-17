@@ -1,6 +1,6 @@
 # System Architecture & Technical Design
 
-**System Name:** Apex Meridian Logistics  
+**System Name:** Freight & Logistics Management System (نظام إدارة الشحن والخدمات اللوجستية)  
 **Architecture Style:** Layered Monolith with Client-Side GIS Offloading  
 **Runtime:** PHP 8.2+ / Laravel 13 / SQLite / Node.js 22  
 
@@ -8,7 +8,7 @@
 
 ## 1. High-Level System Architecture
 
-Apex Meridian Logistics is built as a highly responsive, server-rendered application leveraging Laravel's proven MVC pattern, supplemented by client-side Web Workers for heavy computational geometry tasks.
+The Freight & Logistics Management System is built as a highly responsive, server-rendered application leveraging Laravel's proven MVC pattern, supplemented by client-side Web Workers for heavy computational geometry tasks.
 
 ```mermaid
 graph TB
@@ -87,7 +87,7 @@ The core logistics domain is modeled across 20 tightly coupled Eloquent entities
 Maritime logistics in the Middle East and North Africa requires seamless Arabic and English operation.
 * **Session-Driven Locale:** Users can toggle between `en` (English, LTR) and `ar` (Arabic, RTL) at any time.
 * **Dynamic Directionality:** Blade layout wrappers automatically inject `dir="rtl"` and adjust Tailwind alignment utilities (e.g., `ltr:ml-auto rtl:mr-auto`).
-* **Complete Linguistic Neutralization:** All translation keys in `lang/en` and `lang/ar` have been sanitized to reference *Apex Meridian Logistics* without real client brand terms.
+* **Complete Linguistic Neutralization:** All translation keys in `lang/en` and `lang/ar` have been sanitized to reference *Freight & Logistics Management System* without real client brand terms.
 
 ---
 

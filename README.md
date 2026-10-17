@@ -1,4 +1,4 @@
-# Apex Meridian Logistics — Maritime Shipping & Freight Portal
+# Freight & Logistics Management System (نظام إدارة الشحن والخدمات اللوجستية)
 
 > **A modern, full-stack maritime logistics platform featuring bilingual quotation workflows, relational booking management, interactive milestone tracking, and client-side maritime route calculation.**
 
@@ -15,7 +15,7 @@
 
 Global ocean freight forwarders and NVOCCs (Non-Vessel Operating Common Carriers) struggle with fragmented communication across spreadsheets, legacy desktop software, and asynchronous email chains. Customers face opaque pricing structures, cumbersome booking confirmations, and disjointed container tracking.
 
-**Apex Meridian Logistics** bridges this operational gap by delivering a unified, web-based platform with two synchronized interfaces:
+**The Freight & Logistics Management System** bridges this operational gap by delivering a unified, web-based platform with two synchronized interfaces:
 1. **Public & Customer Self-Service Portal:** Instant vessel schedule discovery, synthetic rate estimation, booking requests, quotation reviews, and live container milestone tracking.
 2. **Operations & Commercial Desks:** Comprehensive back-office management for container inventories, ocean line tariff rules, customs clearance workflows, and commercial invoice generation.
 
@@ -127,8 +127,8 @@ Follow these steps to run the sanitized demonstration instance locally within 2 
 ### 1. Clone & Prepare Environment
 ```bash
 # Clone the repository
-git clone https://github.com/hussainalkhamri/apex-meridian-logistics.git
-cd apex-meridian-logistics
+git clone https://github.com/hussainalkhamri/freight-logistics-system.git
+cd freight-logistics-system
 
 # Create environment configuration from template
 cp .env.example .env

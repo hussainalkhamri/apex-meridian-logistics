@@ -1,6 +1,6 @@
 # Security, Privacy & Data Sanitization Audit
 
-**Target:** Apex Meridian Logistics (Portfolio Demonstration Candidate)  
+**Target:** Freight & Logistics Management System (Portfolio Demonstration Candidate)  
 **Standard:** Strict Zero-Confidentiality & Company-Neutral Policy  
 **Review Status:** Audited and Passed  
 
@@ -11,7 +11,7 @@
 When publishing software originally developed for private or client operations into a public engineering portfolio, absolute data sanitization is paramount. Under no circumstances should real business identifiers, client information, proprietary tariffs, operational databases, or personal credentials be published.
 
 ### Core Sanitization Rules Enforced
-1. **Zero Client Branding:** All occurrences of private client names, logos, letterheads, or corporate registration numbers have been replaced with the neutral brand *Apex Meridian Logistics*.
+1. **Zero Client Branding:** All occurrences of private client names, logos, letterheads, or corporate registration numbers have been replaced with the neutral brand *Freight & Logistics Management System* (*نظام إدارة الشحن والخدمات اللوجستية*).
 2. **Synthetic Data Exclusivity:** All databases, seeder records, invoice items, booking IDs, and milestone events are generated synthetically using reproducible seeders (`DemoSeeder.php`).
 3. **No Production Secrets or Keys:** `.env.example` contains only non-sensitive local defaults. Application encryption keys (`APP_KEY`) are generated per environment.
 4. **Dual Authentication Guarding:** Customer records and internal administrative records are stored in separated tables (`customers` vs `users`) with distinct session cookies to prevent privilege escalation.
@@ -25,8 +25,8 @@ An exhaustive automated token scan was performed across all code, configuration 
 
 | Token / Pattern Category | Original Value / Risk | Sanitized Replacement | Status |
 | :--- | :--- | :--- | :--- |
-| **Client Legal Name** | *LodeStar Line* / *نجم الشمال لاين* | *Apex Meridian Logistics* / *أفق ميريديان للخدمات اللوجستية* | **REPLACED (0 matches)** |
-| **Client Domains** | `lodestar-line.com`, `ibrahimalhadi.com` | `example.com`, `apex-meridian.local` | **REPLACED (0 matches)** |
+| **Client Legal Name** | *LodeStar Line* / *نجم الشمال لاين* | *Freight & Logistics Management System* / *نظام إدارة الشحن والخدمات اللوجستية* | **REPLACED (0 matches)** |
+| **Client Domains** | `lodestar-line.com`, `ibrahimalhadi.com` | `example.com`, `logistics-freight.local` | **REPLACED (0 matches)** |
 | **Phone Numbers** | Real Egyptian mobile & landlines (`01553818989`, `23750681`) | Synthetic international demo (`+1 (800) 555-0199`) | **REPLACED (0 matches)** |
 | **Tax ID / Reg** | Egyptian Tax ID `700123456789003` | Generic alphanumeric `TAX-AE-2026-9901` | **REPLACED (0 matches)** |
 | **Operational DBs** | `database/database.sqlite` (containing live client records) | Excluded via `.gitignore`; fresh synthetic database created via `DemoSeeder` | **QUARANTINED** |

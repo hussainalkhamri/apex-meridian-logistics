@@ -46,7 +46,7 @@ class DemoSeeder extends Seeder
             [
                 'vessel' => 'Meridian Pioneer',
                 'voyage' => 'MP-2026W',
-                'carrier' => 'Apex Carrier Lines',
+                'carrier' => 'Global Ocean Lines',
                 'service_name' => 'Asia Gulf Express',
                 'origin' => 'Shanghai',
                 'origin_code' => 'CNSHA',
@@ -86,7 +86,7 @@ class DemoSeeder extends Seeder
             [
                 'vessel' => 'Pacific Navigator',
                 'voyage' => 'PN-108W',
-                'carrier' => 'Apex Carrier Lines',
+                'carrier' => 'Global Ocean Lines',
                 'service_name' => 'Far East Europe',
                 'origin' => 'Singapore',
                 'origin_code' => 'SGSIN',
@@ -110,9 +110,9 @@ class DemoSeeder extends Seeder
 
         // 4. Master Shipping Tariffs
         $tariffs = [
-            ['shipping_type' => 'sea', 'service_type' => 'FCL', 'incoterm' => 'FOB', 'container_type' => '40HC', 'origin_country' => 'China', 'origin_port' => 'Shanghai', 'destination_country' => 'Yemen', 'destination_port' => 'Aden', 'shipping_company' => 'Apex Carrier Lines', 'transit_time' => 18, 'currency' => 'USD', 'price' => 2450, 'additional_fee' => 150, 'notes' => 'Synthetic demo rate.'],
+            ['shipping_type' => 'sea', 'service_type' => 'FCL', 'incoterm' => 'FOB', 'container_type' => '40HC', 'origin_country' => 'China', 'origin_port' => 'Shanghai', 'destination_country' => 'Yemen', 'destination_port' => 'Aden', 'shipping_company' => 'Global Ocean Lines', 'transit_time' => 18, 'currency' => 'USD', 'price' => 2450, 'additional_fee' => 150, 'notes' => 'Synthetic demo rate.'],
             ['shipping_type' => 'sea', 'service_type' => 'FCL', 'incoterm' => 'FOB', 'container_type' => '20GP', 'origin_country' => 'China', 'origin_port' => 'Ningbo', 'destination_country' => 'Egypt', 'destination_port' => 'Alexandria', 'shipping_company' => 'Alliance Ocean Line', 'transit_time' => 22, 'currency' => 'USD', 'price' => 1650, 'additional_fee' => 120, 'notes' => 'Synthetic demo rate.'],
-            ['shipping_type' => 'sea', 'service_type' => 'FCL', 'incoterm' => 'CIF', 'container_type' => '40HC', 'origin_country' => 'United Arab Emirates', 'origin_port' => 'Jebel Ali', 'destination_country' => 'Yemen', 'destination_port' => 'Aden', 'shipping_company' => 'Apex Carrier Lines', 'transit_time' => 8, 'currency' => 'USD', 'price' => 1800, 'additional_fee' => 100, 'notes' => 'Synthetic demo rate.'],
+            ['shipping_type' => 'sea', 'service_type' => 'FCL', 'incoterm' => 'CIF', 'container_type' => '40HC', 'origin_country' => 'United Arab Emirates', 'origin_port' => 'Jebel Ali', 'destination_country' => 'Yemen', 'destination_port' => 'Aden', 'shipping_company' => 'Global Ocean Lines', 'transit_time' => 8, 'currency' => 'USD', 'price' => 1800, 'additional_fee' => 100, 'notes' => 'Synthetic demo rate.'],
             ['shipping_type' => 'sea', 'service_type' => 'FCL', 'incoterm' => 'FOB', 'container_type' => '40HC', 'origin_country' => 'China', 'origin_port' => 'Qingdao', 'destination_country' => 'Saudi Arabia', 'destination_port' => 'Jeddah', 'shipping_company' => 'Global Freight Star', 'transit_time' => 20, 'currency' => 'USD', 'price' => 2100, 'additional_fee' => 180, 'notes' => 'Synthetic demo rate.'],
         ];
         foreach ($tariffs as $t) {
@@ -191,7 +191,7 @@ class DemoSeeder extends Seeder
             'customs_declaration_no' => 'DEC-2026-99214',
             'carrier_vessel' => 'Meridian Pioneer',
             'carrier_voyage' => 'MP-2026W',
-            'carrier_booking_ref' => 'APEX-88201',
+            'carrier_booking_ref' => 'GLO-88201',
             'container_seal_no' => 'SEAL-99824',
             'route_details' => ['mode' => 'CIF', 'services' => ['customs_requested' => true]],
             'created_at' => Carbon::now()->subDays(7),
