@@ -1,6 +1,6 @@
 @extends('layouts.customer')
 
-@section('title', __('تأكيد الطلب'))
+@section('title', __('تأكيد الطلب') . ' — ' . __('messages.site_name'))
 
 @section('head')
 <style>

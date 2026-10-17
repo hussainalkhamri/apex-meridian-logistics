@@ -1,6 +1,6 @@
 @extends('layouts.customer')
 
-@section('title', __('طلب شحنة جديدة'))
+@section('title', __('طلب شحنة جديدة') . ' — ' . __('messages.site_name'))
 
 @section('content')
 @php

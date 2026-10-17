@@ -2,12 +2,12 @@
 
 return [
     'name' => [
-        'ar' => 'نظام إدارة الشحن والخدمات اللوجستية',
-        'en' => 'Shipping and Logistics Management System',
+        'ar' => 'نجم الشمال لاين للشحن والخدمات اللوجستية',
+        'en' => 'North Star Line Shipping & Logistics',
     ],
     'short_name' => [
-        'ar' => 'نظام إدارة الشحن والخدمات اللوجستية',
-        'en' => 'Shipping & Logistics Management System',
+        'ar' => 'نجم الشمال لاين للشحن والخدمات اللوجستية',
+        'en' => 'North Star Line Shipping & Logistics',
     ],
     'address' => [
         'ar' => 'مركز التجارة البحرية، حي المرفأ، جناح 400، البوابة الدولية',
@@ -30,8 +30,33 @@ return [
     ],
     'website' => null,
     'tax_number' => env('COMPANY_TAX_NUMBER', 'US-88291047-X'),
-    'logo' => null,
-    'letterhead_logo' => null,
-    'icon' => null,
-    'partners' => [],
+    'logo' => 'images/brand/system-logo.svg',
+    'letterhead_logo' => 'images/brand/system-letterhead.svg',
+    'icon' => 'images/brand/system-icon.svg',
+    'partners' => [
+        [
+            'name' => 'COSCO Shipping',
+            'logo' => 'images/brand/partners/cosco.svg',
+        ],
+        [
+            'name' => 'CMA CGM',
+            'logo' => 'images/brand/partners/cma-cgm.svg',
+        ],
+        [
+            'name' => 'Maersk',
+            'logo' => 'images/brand/partners/maersk.svg',
+        ],
+        [
+            'name' => 'Hapag-Lloyd',
+            'logo' => 'images/brand/partners/hapag-lloyd.svg',
+        ],
+        [
+            'name' => 'Evergreen Marine',
+            'logo' => 'images/brand/partners/evergreen.svg',
+        ],
+        [
+            'name' => 'ONE (Ocean Network Express)',
+            'logo' => 'images/brand/partners/one.svg',
+        ],
+    ],
 ];

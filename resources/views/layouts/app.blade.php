@@ -213,8 +213,10 @@
                 <!-- Sidebar Header -->
                 <div class="flex h-16 items-center justify-between px-6 border-b border-border/60 bg-card/90">
                     <a href="{{ route('home') }}" class="flex items-center gap-2">
+                        <img src="{{ asset(config('company.icon')) }}?v=3" alt="{{ __('messages.company_logo_alt') }}" class="company-site-logo h-8 w-8 rounded-lg border border-border bg-white object-contain p-0.5 shadow-sm">
                         <div class="leading-tight">
                             <div class="text-sm font-extrabold tracking-tight text-foreground">{{ __('messages.site_name') }}</div>
+                            <div class="text-[9px] uppercase tracking-[0.2em] text-muted-foreground">Shipping & Logistics</div>
                         </div>
                     </a>
                     <button onclick="toggleSidebar()" class="lg:hidden h-8 w-8 rounded-lg hover:bg-secondary/40 flex items-center justify-center">
@@ -533,17 +535,22 @@
         <header class="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-xl">
             <div class="container mx-auto flex h-16 min-w-0 items-center justify-between gap-3 px-4">
                 <a href="{{ route('home') }}" class="flex min-w-0 items-center gap-2">
+                    <img src="{{ asset(config('company.icon')) }}?v=3" alt="{{ __('messages.company_logo_alt') }}" class="company-site-logo h-9 w-9 rounded-lg border border-border bg-white object-contain p-0.5 shadow-sm">
                     <div class="min-w-0 leading-tight">
                         <div class="truncate text-base font-extrabold tracking-tight text-foreground">{{ __('messages.site_name') }}</div>
+                        <div class="truncate text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Shipping & Logistics</div>
                     </div>
                 </a>
                 
                 <nav class="hidden items-center gap-1 lg:flex text-sm font-medium">
                     @php
                         $navItems = [
-                            ['route' => 'home', 'label' => ($currentLocale === 'ar' ? 'بوابة النظام' : 'Portal')],
+                            ['route' => 'home', 'label' => __('messages.home')],
                             ['route' => 'tracking', 'label' => __('messages.tracking')],
                             ['route' => 'schedules', 'label' => __('messages.schedules')],
+                            ['route' => 'fleet', 'label' => __('messages.fleet')],
+                            ['route' => 'public.ports', 'label' => __('messages.public_our_ports')],
+                            ['route' => 'public.contact', 'label' => __('messages.public_contact')],
                         ];
                     @endphp
                     @foreach($navItems as $item)
@@ -688,14 +695,61 @@
             @yield('content')
         </main>
         
-        <!-- Enterprise System Footer -->
-        <footer class="border-t border-border/80 bg-card/60 py-6 text-xs text-muted-foreground backdrop-blur-sm">
-            <div class="container mx-auto flex flex-col items-center justify-between gap-3 px-4 sm:flex-row">
-                <div class="flex items-center gap-2 font-bold text-foreground">
-                    <span>{{ config('company.name.' . app()->getLocale()) }}</span>
-                </div>
+        @include('partials.company-partners')
+        <!-- Footer -->
+        <footer class="company-site-footer border-t border-border bg-primary text-white">
+            <div class="container mx-auto grid gap-10 px-4 py-14 md:grid-cols-4">
                 <div>
-                    &copy; {{ date('Y') }} {{ config('company.name.' . app()->getLocale()) }}. {{ __('messages.all_rights_reserved') ?? 'All rights reserved.' }}
+                    <div class="flex items-center gap-2">
+                        <img src="{{ asset(config('company.icon')) }}?v=3" alt="{{ __('messages.company_logo_alt') }}" class="company-site-logo h-9 w-9 rounded-lg border border-white/20 bg-white object-contain p-0.5 shadow-sm">
+                        <div class="text-lg font-extrabold">{{ __('messages.site_name') }}</div>
+                    </div>
+                    <p class="mt-4 text-sm text-white/70 leading-relaxed">
+                        {{ __('messages.trusted_partner_text') }}
+                        <span class="mt-3 block text-xs">{{ config('company.address.' . app()->getLocale()) }}</span>
+                        @foreach(config('company.phones') as $phone)
+                            <a class="mt-1 block text-xs" dir="ltr" href="tel:{{ $phone['tel'] }}">{{ $phone['display'] }}</a>
+                        @endforeach
+                        <a class="mt-1 block text-xs" dir="ltr" href="tel:{{ config('company.landline.tel') }}">{{ config('company.landline.display') }}</a>
+                        @foreach(config('company.emails') as $email)
+                            <a class="mt-1 block text-xs break-all" dir="ltr" href="mailto:{{ $email }}">{{ $email }}</a>
+                        @endforeach
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="mb-4 text-sm font-bold">{{ __('messages.services') }}</h4>
+                    <ul class="space-y-2 text-sm text-white/70">
+                        <li><a href="{{ auth('customer')->check() ? route('customer.shipments.create') : route('customer.login') }}" class="hover:text-white">{{ __('messages.container_shipping') }}</a></li>
+                        <li><a href="{{ auth('customer')->check() ? route('customer.shipments.create') : route('customer.login') }}" class="hover:text-white">{{ __('messages.reefer_shipping') }}</a></li>
+                        <li><a href="{{ auth('customer')->check() ? route('customer.shipments.create') : route('customer.login') }}" class="hover:text-white">{{ __('messages.dangerous_goods') }}</a></li>
+                        <li><a href="{{ auth('customer')->check() ? route('customer.shipments.create') : route('customer.login') }}" class="hover:text-white">LCL & FCL</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="mb-4 text-sm font-bold">{{ __('messages.quick_links') }}</h4>
+                    <ul class="space-y-2 text-sm text-white/70">
+                        <li><a href="{{ route('tracking') }}" class="hover:text-white">{{ __('messages.tracking') }}</a></li>
+                        <li><a href="{{ route('schedules') }}" class="hover:text-white">{{ __('messages.schedules') }}</a></li>
+                        <li><a href="{{ route('fleet') }}" class="hover:text-white">{{ __('messages.fleet') }}</a></li>
+                        <li><a href="{{ route('public.ports') }}" class="hover:text-white">{{ __('messages.public_our_ports') }}</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="mb-4 text-sm font-bold">{{ __('messages.company') }}</h4>
+                    <ul class="space-y-2 text-sm text-white/70">
+                        <li><a href="{{ route('public.contact') }}" class="hover:text-white">{{ __('messages.public_contact') }}</a></li>
+                        <li><a href="{{ route('tracking') }}" class="hover:text-white">{{ __('messages.shipment_tracking') }}</a></li>
+                        <li><a href="{{ route('schedules') }}" class="hover:text-white">{{ __('messages.schedules') }}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10">
+                <div class="container mx-auto flex flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-white/60 md:flex-row">
+                    <span>{{ str_replace(':year', date('Y'), __('messages.footer_copyright')) }}</span>
+                    <span>{{ __('messages.privacy_policy') }} · {{ __('messages.terms_of_use') }}</span>
                 </div>
             </div>
         </footer>

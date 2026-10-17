@@ -1,6 +1,6 @@
 @extends('layouts.customer')
 
-@section('title', __('messages.tracking'))
+@section('title', __('messages.shipment_tracking') . ' — ' . __('messages.site_name'))
 
 @section('content')
 @php

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'إدارة جداول الرحلات')
+@section('title', 'إدارة جداول الرحلات — ' . config('company.name.ar'))
 
 @section('content')
 <div class="min-h-screen bg-secondary/20 py-6">

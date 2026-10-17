@@ -1,6 +1,6 @@
 @extends('layouts.customer')
 
-@section('title', __('messages.notifications_center'))
+@section('title', __('messages.notifications_center') . ' — ' . __('messages.site_name'))
 
 @section('content')
 <div>

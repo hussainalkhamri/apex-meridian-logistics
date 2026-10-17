@@ -33,10 +33,12 @@
             
             <div class="mx-auto w-full max-w-md">
                 
-                <!-- System Title (No Logo) -->
+                <!-- Logo -->
                 <div class="mb-8 flex items-center gap-3">
+                    <img src="{{ asset(config('company.icon')) }}?v=3" alt="{{ __('messages.company_logo_alt') }}" class="h-12 w-12 rounded-xl bg-white object-contain p-1 border border-border shadow-sm">
                     <div class="leading-tight">
-                        <div class="text-xl font-extrabold tracking-tight text-foreground">{{ __('messages.site_name') }}</div>
+                        <div class="text-lg font-extrabold tracking-tight text-foreground">{{ __('messages.site_name') }}</div>
+                        <div class="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">{{ config('company.name.en') }}</div>
                     </div>
                 </div>
 

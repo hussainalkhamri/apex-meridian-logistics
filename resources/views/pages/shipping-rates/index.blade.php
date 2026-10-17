@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'أسعار الشحن — النظام الجمركي')
+@section('title', 'أسعار الشحن — ' . config('company.name.ar'))
 
 @section('head')
 <style>

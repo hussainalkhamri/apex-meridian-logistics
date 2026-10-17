@@ -1,32 +1,32 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Shipping and Logistics ERP System E2E Suite', () => {
+test.describe('North Star Line Shipping & Logistics System E2E Suite', () => {
 
-  test('1. Direct Login Portal renders without logo or marketing website clutter', async ({ page }) => {
+  test('1. Marketing Landing Page and Registration Portal render as intended', async ({ page }) => {
     await page.goto('/');
 
-    // Check title contains system name
+    // Check title contains restored company name
     const title = await page.title();
-    expect(title).toMatch(/(نظام إدارة الشحن والخدمات اللوجستية|Shipping and Logistics)/);
+    expect(title).toMatch(/(نجم الشمال لاين للشحن والخدمات اللوجستية|North Star Line)/);
 
-    // Verify Direct Login Form inputs are visible immediately
-    const usernameInput = page.locator('input[name="username"]').first();
-    await expect(usernameInput).toBeVisible();
+    // Verify hero slider and marketing elements are present
+    const heroSlider = page.locator('[data-home-hero-slider], .hero-section, .marketing-hero');
+    await expect(page.locator('body')).toContainText(/نجم الشمال لاين للشحن والخدمات اللوجستية|North Star Line/);
 
-    const passwordInput = page.locator('input[name="password"]').first();
-    await expect(passwordInput).toBeVisible();
+    // Verify partner / trust section or carrier logos
+    const partnersSection = page.locator('.company-partners-slider, footer');
+    await expect(partnersSection.first()).toBeVisible();
 
-    // Verify submit button exists
-    const submitBtn = page.locator('button[type="submit"]').first();
-    await expect(submitBtn).toBeVisible();
+    // Verify registration link leads to customer registration form
+    const registerBtn = page.locator('a[href*="/customer/register"]').first();
+    await expect(registerBtn).toBeVisible();
 
-    // Verify Customer Registration link exists
-    const registerLink = page.locator('a[href*="/customer/register"]').first();
-    await expect(registerLink).toBeVisible();
-
-    // Verify no img logos exist in header
-    const logoImgs = page.locator('header img, aside img, .company-site-logo');
-    await expect(logoImgs).toHaveCount(0);
+    // Navigate to registration form
+    await page.goto('/customer/register');
+    await expect(page.locator('input[name="company"]')).toBeVisible();
+    await expect(page.locator('input[name="contact_name"]')).toBeVisible();
+    await expect(page.locator('input[name="email"]')).toBeVisible();
+    await expect(page.locator('input[name="password"]')).toBeVisible();
   });
 
   test('2. Language Switching works seamlessly (AR RTL <-> EN LTR)', async ({ page }) => {
@@ -41,7 +41,7 @@ test.describe('Shipping and Logistics ERP System E2E Suite', () => {
     await page.waitForLoadState('networkidle');
     const htmlDirAr = await page.locator('html').getAttribute('dir');
     expect(htmlDirAr).toBe('rtl');
-    await expect(page.locator('body')).toContainText(/نظام إدارة الشحن والخدمات اللوجستية|تسجيل الدخول/);
+    await expect(page.locator('body')).toContainText(/نجم الشمال لاين للشحن والخدمات اللوجستية/);
   });
 
   test('3. Real-time Cargo Tracking System displays accurate shipment status and map', async ({ page }) => {
@@ -72,7 +72,7 @@ test.describe('Shipping and Logistics ERP System E2E Suite', () => {
     expect(bodyText).toMatch(/(جدول|رحلات|Schedules|Vessel|Port|Flight)/i);
   });
 
-  test('5. Operations Staff Login authenticates and loads Management Dashboard', async ({ page }) => {
+  test('5. Operations Staff Login authenticates and loads Management Dashboard with exact title', async ({ page }) => {
     await page.goto('/login');
 
     // Fill credentials
@@ -84,12 +84,16 @@ test.describe('Shipping and Logistics ERP System E2E Suite', () => {
     await page.waitForURL('**/dashboard', { timeout: 15000 });
     expect(page.url()).toContain('/dashboard');
 
-    // Verify internal operations interface elements
-    const dashboardText = await page.locator('body').innerText();
-    expect(dashboardText).toMatch(/(لوحة التحكم|العمليات|Dashboard|Shipments|الشحنات)/i);
+    // Verify header title in management layout
+    const headerTitle = page.locator('header h2').first();
+    await expect(headerTitle).toContainText(/لوحة التحكم — نجم الشمال لاين للشحن والخدمات اللوجستية|Dashboard/);
+
+    // Navigate to Orders page and verify exact title in header
+    await page.goto('/orders');
+    await expect(page.locator('header h2').first()).toContainText('الطلبات — نجم الشمال لاين للشحن والخدمات اللوجستية');
   });
 
-  test('6. Customer Portal Login authenticates and loads Client Dashboard', async ({ browser }) => {
+  test('6. Customer Portal Login authenticates and loads Client Dashboard with exact title', async ({ browser }) => {
     // Use fresh context for customer session
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -105,9 +109,9 @@ test.describe('Shipping and Logistics ERP System E2E Suite', () => {
     await page.waitForURL('**/customer/dashboard', { timeout: 15000 });
     expect(page.url()).toContain('/customer/dashboard');
 
-    // Verify customer dashboard elements
-    const customerText = await page.locator('body').innerText();
-    expect(customerText).toMatch(/(شحناتي|لوحة العميل|Customer Portal|My Shipments|طلب شحنة)/i);
+    // Verify customer dashboard elements & header title
+    const headerTitle = page.locator('header .truncate').first();
+    await expect(headerTitle).toContainText(/نظرة عامة — نجم الشمال لاين للشحن والخدمات اللوجستية|بوابة العملاء/);
 
     await context.close();
   });

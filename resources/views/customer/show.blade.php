@@ -1,6 +1,6 @@
 @extends('layouts.customer')
 
-@section('title', __('تفاصيل الطلب ') . $booking->id)
+@section('title', __('تفاصيل الطلب ') . '#' . $booking->id . ' — ' . __('messages.site_name'))
 
 @section('content')
 @php

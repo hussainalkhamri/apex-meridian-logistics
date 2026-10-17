@@ -37,8 +37,10 @@
         <div class="container mx-auto grid min-h-screen gap-8 px-4 py-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:py-10">
             <section class="hidden text-white lg:block">
                 <a href="{{ route('home') }}" class="inline-flex items-center gap-3">
+                    <img src="{{ asset(config('company.icon')) }}?v=3" alt="{{ __('messages.company_logo_alt') }}" class="h-12 w-12 rounded-xl border border-white/20 bg-white object-contain p-1 shadow-sm">
                     <div>
-                        <div class="text-2xl font-black tracking-tight">{{ __('messages.site_name') }}</div>
+                        <div class="text-xl font-black">{{ __('messages.site_name') }}</div>
+                        <div class="text-[11px] uppercase tracking-[0.22em] text-white/60">Customs Clearance & Logistics</div>
                     </div>
                 </a>
 
@@ -74,8 +76,10 @@
                     <div class="rounded-xl bg-card p-5 shadow-card sm:p-7">
                         <div class="mb-7 flex items-center justify-between gap-3">
                             <a href="{{ route('home') }}" class="flex min-w-0 items-center gap-3 lg:hidden">
+                                <img src="{{ asset(config('company.icon')) }}?v=3" alt="{{ __('messages.company_logo_alt') }}" class="h-10 w-10 rounded-lg border border-border bg-white object-contain p-1">
                                 <div class="min-w-0">
-                                    <div class="truncate text-base font-black">{{ __('messages.site_name') }}</div>
+                                    <div class="truncate text-sm font-black">{{ __('messages.site_name') }}</div>
+                                    <div class="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Unified Access</div>
                                 </div>
                             </a>
                             <a href="{{ route('home') }}" class="mr-auto inline-flex h-9 items-center justify-center gap-2 rounded-lg border border-border bg-background px-3 text-xs font-bold hover:bg-secondary/60">

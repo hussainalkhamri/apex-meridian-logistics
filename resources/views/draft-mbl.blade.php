@@ -86,8 +86,10 @@
             <!-- Left Header -->
             <div class="col-span-7 p-4 border-r border-slate-300 flex items-start justify-between gap-4">
                 <div class="flex items-center gap-3">
+                    <img src="{{ asset(config('company.icon')) }}?v=3" alt="Logo" class="h-14 w-14 rounded-xl border border-slate-100 bg-white object-contain p-1 shadow-sm">
                     <div>
-                        <h2 class="text-sm font-black text-slate-900 tracking-tight leading-none">{{ __('messages.company_name') }}</h2>
+                        <h2 class="text-xs font-black text-slate-900 tracking-tight leading-none">{{ __('messages.company_name') }}</h2>
+                        <p class="text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">{{ config('company.short_name.en') }}</p>
                         <h1 class="text-base font-extrabold tracking-widest text-brandSky uppercase mt-2 leading-none">BILL OF LADING</h1>
                         <p class="text-[8px] font-bold text-red-600 uppercase tracking-widest mt-1">DRAFT ONLY — NOT NEGOTIABLE</p>
                     </div>
