@@ -228,7 +228,7 @@
             <div class="home-reveal home-reveal-delay relative">
                 <div class="overflow-hidden rounded-xl border border-white/20 bg-white shadow-elegant">
                     <div>
-                        <img src="{{ asset('images/brand/logistics.jpg') }}" alt="{{ $copy('أفق ميريديان — خدمات الشحن والخدمات اللوجستية', 'Apex Meridian shipping and logistics services') }}" class="block h-auto w-full" fetchpriority="high">
+                        <img src="{{ asset('images/brand/logistics.jpg') }}" alt="{{ $copy('نظام إدارة الشحن والخدمات اللوجستية', 'Freight & Logistics Management System') }}" class="block h-auto w-full" fetchpriority="high">
                         <form action="{{ route('tracking') }}" method="GET" class="grid gap-3 border-t border-border p-4 md:grid-cols-[1fr_auto]">
                             <label for="bl-input-live" class="sr-only">{{ __('messages.home_tracking_label') }}</label>
                             <div class="relative">

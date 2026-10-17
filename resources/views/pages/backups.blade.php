@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'النسخ الاحتياطي للبيانات — {{ config('company.name.ar') }}')
+@section('title', 'النسخ الاحتياطي للبيانات — ' . config('company.name.ar'))
 
 @section('content')
 <div>

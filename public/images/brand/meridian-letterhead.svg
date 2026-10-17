@@ -1,13 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 70" fill="none">
-  <g transform="translate(6, 10)">
-    <circle cx="25" cy="25" r="23" stroke="#0369a1" stroke-width="2"/>
-    <ellipse cx="25" cy="25" rx="23" ry="9" stroke="#0369a1" stroke-width="1.5"/>
-    <line x1="25" y1="2" x2="25" y2="48" stroke="#0f172a" stroke-width="2"/>
-    <line x1="2" y1="25" x2="48" y2="25" stroke="#0f172a" stroke-width="1.5"/>
-    <polygon points="25,6 29,25 25,22 21,25" fill="#0369a1"/>
-    <polygon points="25,44 29,25 25,28 21,25" fill="#475569"/>
-    <circle cx="25" cy="25" r="3.5" fill="#0f172a"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 70" fill="none">
+  <g transform="translate(8, 9)">
+    <rect width="52" height="52" rx="12" fill="#1e3a8a"/>
+    <circle cx="26" cy="26" r="20" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.7"/>
+    <path d="M14 36C18 33 22 33 26 36C30 39 34 39 38 36" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+    <path d="M16 26L26 12L36 26H16Z" fill="#0284c7" opacity="0.9"/>
+    <rect x="23" y="24" width="6" height="8" rx="1" fill="#ffffff"/>
+    <circle cx="26" cy="18" r="2.5" fill="#ffffff"/>
   </g>
-  <text x="68" y="34" font-family="'Cairo', system-ui, sans-serif" font-size="20" font-weight="800" fill="#0f172a" letter-spacing="1.2">APEX MERIDIAN</text>
-  <text x="69" y="52" font-family="'Cairo', system-ui, sans-serif" font-size="9" font-weight="700" fill="#0369a1" letter-spacing="3">GLOBAL OCEAN FREIGHT</text>
+  <text x="70" y="32" font-family="'Cairo', system-ui, sans-serif" font-size="15" font-weight="800" fill="#0f172a">نظام إدارة الشحن والخدمات اللوجستية</text>
+  <text x="70" y="52" font-family="system-ui, sans-serif" font-size="8.5" font-weight="700" fill="#0284c7" letter-spacing="1.8">FREIGHT &amp; LOGISTICS MANAGEMENT SYSTEM</text>
 </svg>

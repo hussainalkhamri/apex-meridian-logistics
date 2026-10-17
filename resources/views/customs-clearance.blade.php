@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'التخليص والحاسبة الجمركية — {{ config('company.name.ar') }}')
+@section('title', 'التخليص والحاسبة الجمركية — ' . config('company.name.ar'))
 
 @section('content')
 @php

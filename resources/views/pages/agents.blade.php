@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'إدارة الوكلاء — {{ config('company.name.ar') }}')
+@section('title', 'إدارة الوكلاء — ' . config('company.name.ar'))
 
 @section('head')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@26.9.2/build/css/intlTelInput.css">

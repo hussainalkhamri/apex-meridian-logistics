@@ -2,12 +2,12 @@
 
 return [
     'name' => [
-        'ar' => 'أفق ميريديان للشحن والخدمات اللوجستية',
-        'en' => 'Apex Meridian Logistics for Shipping & Logistics',
+        'ar' => 'نظام إدارة الشحن والخدمات اللوجستية',
+        'en' => 'Freight & Logistics Management System',
     ],
     'short_name' => [
-        'ar' => 'أفق ميريديان',
-        'en' => 'Apex Meridian Logistics',
+        'ar' => 'إدارة الشحن واللوجستيات',
+        'en' => 'Freight & Logistics Portal',
     ],
     'address' => [
         'ar' => 'مركز التجارة البحرية، حي المرفأ، جناح 400، البوابة الدولية',

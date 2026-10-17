@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'المبيعات — {{ config('company.name.ar') }}')
+@section('title', 'المبيعات — ' . config('company.name.ar'))
 
 @section('content')
 <div>
